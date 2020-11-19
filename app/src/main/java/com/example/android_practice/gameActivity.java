@@ -1,4 +1,4 @@
-package com.example.android_pracitce;
+package com.example.android_practice;
 
 import android.os.Bundle;
 import android.view.View;
@@ -122,6 +122,7 @@ public class gameActivity extends AppCompatActivity {
                 System.out.println("x " + location[0] + " y " + location[1]);
             }
         });
+
         btn8.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
