@@ -12,23 +12,30 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private ArrayList<String> mData = null ;
+    private ArrayList<User> list = new ArrayList<>();
+    private User Data = null ;
+
 
     // 아이템 뷰를 저장하는 뷰홀더 클래스.
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView1 ;
+
+        private TextView name ;
+        private TextView age;
+        private TextView email;
 
         ViewHolder(View itemView) {
             super(itemView) ;
 
             // 뷰 객체에 대한 참조. (hold strong reference)
-            textView1 = itemView.findViewById(R.id.title) ;
+            name = itemView.findViewById(R.id.name) ;
+            age = itemView.findViewById(R.id.age) ;
+            email = itemView.findViewById(R.id.email) ;
         }
     }
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
-    RecyclerViewAdapter(ArrayList<String> list) {
-        mData = list ;
+    RecyclerViewAdapter() {
+
     }
 
     // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
@@ -46,13 +53,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
     @Override
     public void onBindViewHolder(RecyclerViewAdapter.ViewHolder holder, int position) {
-        String text = mData.get(position) ;
-        holder.textView1.setText(text) ;
+        holder.name.setText(Data.getName());
+        holder.age.setText(Integer.toString((Data.getAge())));
+        holder.email.setText(Data.getEmail());
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.
     @Override
     public int getItemCount() {
-        return mData.size() ;
+        return list.size() ;
+    }
+
+    public void add(User item){
+        Data = item;
     }
 }
