@@ -13,7 +13,7 @@
         android:layout_height="56dp"
         android:lineSpacingMultiplier="1.2"
         android:padding="16dp"
-        android:text="fragment Test2"
+        android:text="fragment Test1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
